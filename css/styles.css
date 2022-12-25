@@ -584,6 +584,9 @@ img {
 
     background-color: rgba(46, 47, 66, 0.4);
     backdrop-filter: blur(3px);
+
+    opacity: 1;
+    transform: opacity 5000ms var(--timing-function);
 }
 
 .backdrop.is-hidden {
