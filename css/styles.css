@@ -10,7 +10,6 @@
     --color-style-logo: #4D5AE5;
     --color-decoration-text: #434455;
     --border-color: #E7E9FC;
-    --additional-background-color: #F4F4FD;
     --active-color-button: #404BBF;
     --color-thumb:  #F4F4FD;
     --color-hover-social: #31D0AA;
@@ -109,6 +108,8 @@ img {
     letter-spacing: 0.02em;
     text-decoration: none;
     color: var(--base-color-text);
+
+    transition: color 250ms var(--timing-function);
 }
 
 .current {
@@ -205,18 +206,14 @@ img {
     font-size: 16px;
     line-height: 1.18;
     letter-spacing: 0.04em;
+
+    transition: background 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 
-.hero-button:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
-.hero-button:focus {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-
+.hero-button:hover, .hero-button:focus,
 .hero-button:active {
-    background: var(--color-style-logo);
+    background: var(--active-color-button);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -307,7 +304,7 @@ img {
 /*_________Resumes section___________*/
 
 .resumes {
-    background-color: var(--additional-background-color);
+    background-color: var(--color-thumb);
 }
 
 .resumes-list {
@@ -363,12 +360,13 @@ img {
     border-radius: 4px;
     fill: #8E8F99;
 
-    transition: border fill 250ms var(--timing-function);
+    transition: border-color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
 
 .customers-link:hover,
 .customers-link:focus {
-    border-color: #4D5AE5;
+    border-color: var(--active-color-button);
     fill: var(--color-style-logo);
 }
 
@@ -394,7 +392,7 @@ img {
     line-height: 1.67;
     letter-spacing: 0.03em;
     text-decoration: none;
-    color: var(--additional-background-color);
+    color: var(--color-thumb);
 }
 
 .footer-logo-web {
@@ -427,6 +425,9 @@ img {
     height: 40px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+
+    transition: background-color 250ms var(--timing-function),
+    border-radius 250ms var(--timing-function);
 }
 
 .social-media-link:hover,
@@ -482,9 +483,14 @@ img {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    background-color: var(--additional-background-color);
+    background-color: var(--color-thumb);
     color: var(--color-style-logo);
     cursor: pointer;
+
+    transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
 }
 
 .examples-button:hover, .examples-button:focus {
@@ -496,18 +502,58 @@ img {
 
 /*_______Section samples________ */
 
-
 .examples-link {
     text-decoration: none;
+}
+
+.overlay-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.examples-link:hover .overlay-thumb,
+.examples-link:focus .overlay-thumb {
+    opacity: 1;
+}
+
+.examples-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 360px;
+    height: 300px;
+
+    background-color: var(--color-style-logo);
+
+    transform: translateY(100%);
+    transition: transform 250ms var(--timing-function);
+}
+
+.examples-link:hover .examples-overlay {
+    transform: translateY(0);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 40px;
+    left: 32px;
+
+    width: 296px;
+    
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-thumb);
 }
 
 .container-example {
     padding-top: 32px;
     padding-bottom: 32px;
     padding-left: 16px;
-    border-left: 0.5px solid #F4F4FD;
-    border-right: 0.5px solid #F4F4FD;
-    border-bottom: 0.5px solid #F4F4FD;
+    border-left: 0.5px solid var(--color-thumb);
+    border-right: 0.5px solid var(--color-thumb);
+    border-bottom: 0.5px solid var(--color-thumb);
 }
 
 .examples-subtitle {
