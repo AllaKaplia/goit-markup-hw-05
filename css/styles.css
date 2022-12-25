@@ -367,7 +367,7 @@ img {
 .customers-link:hover,
 .customers-link:focus {
     border-color: var(--active-color-button);
-    fill: var(--color-style-logo);
+    fill: var(--active-color-button);
 }
 
 /*______Footer section______*/
