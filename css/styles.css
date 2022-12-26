@@ -334,10 +334,18 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: 40px;
     height: 40px;
+
     background-color: var(--color-style-logo);
     border-radius: 50%;
+
+    transition: background-color 250ms var(--timing-function);
+}
+
+.social-list-link:hover{
+    background-color: var(--active-color-button);
 }
 
 /*_____Customers section_____*/
@@ -382,6 +390,7 @@ img {
 .footer-container {
     display: flex;
     gap: 120px;
+    align-items: baseline;
 }
 
 .footer-logo {
@@ -588,7 +597,7 @@ img {
     backdrop-filter: blur(3px);
 
     opacity: 1;
-    transform: opacity 250ms var(--timing-function),
+    transition: opacity 250ms var(--timing-function),
     visibility 250ms var(--timing-function);
 }
 
